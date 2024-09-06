@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn to Code 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Learn to Code 1</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learn-to-code-1.html">Learn to Code 1</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="learn-to-code">
+        <h2>What I Learned</h2>
+        <p>In this section, I learned about various fundamental programming concepts, including:</p>
+        <ul>
+            <li>Commands</li>
+            <li>For Loops</li>
+            <li>Conditionals</li>
+            <li>Logical Operators</li>
+            <li>Variables</li>
+            <li>Types</li>
+            <li>Initialization</li>
+            <li>Functions</li>
+            <li>Parameters</li>
+        </ul>
+        <p>Here are some resources and examples:</p>
+
+        <figure>
+            <img src="unit1/picture1.jpg" alt="Picture 1">
+            <figcaption>Explanation of Picture 1.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="unit1/picture2.jpg" alt="Picture 2">
+            <figcaption>Explanation of Picture 2.</figcaption>
+        </figure>
+
+        <figure>
+            <video controls>
+                <source src="unit1/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Video 1 showing examples of learned concepts.</figcaption>
+        </figure>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lea Kim. All rights reserved.</p>
+    </footer>
+</body>
+</html>
