@@ -1,7 +1,8 @@
 /* Reset some default styling */
-body, h1, h2, h3, p {
+body, h1, h2, p {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
 }
 
 /* Basic layout */
@@ -12,6 +13,7 @@ body {
     color: #333;
 }
 
+/* Header styling */
 header {
     background: #003366; /* Dark blue background */
     color: #fff;
@@ -19,6 +21,12 @@ header {
     text-align: center;
 }
 
+header img {
+    max-width: 100px; /* Adjust as needed */
+    margin-top: 10px;
+}
+
+/* Navigation styling */
 nav ul {
     list-style: none;
     padding: 0;
@@ -38,12 +46,14 @@ nav ul li a {
     padding: 10px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, 
+nav ul li a:focus { /* Added focus state for better accessibility */
     background: #00509e; /* Lighter blue for hover effect */
     border-radius: 5px;
 }
 
-section {
+/* Main content styling */
+main {
     padding: 2rem;
     margin: 0 auto;
     max-width: 800px;
@@ -52,6 +62,7 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer styling */
 footer {
     background: #003366; /* Dark blue background */
     color: #fff;
@@ -60,12 +71,27 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
 }
 
-.project {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    background: #f9f9f9;
+/* Ensure content does not overlap footer on smaller screens */
+body {
+    padding-bottom: 4rem; /* Extra space for footer */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin-right: 0;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    main {
+        padding: 1rem;
+    }
 }
