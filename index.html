@@ -3,62 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn to Code 1</title>
-    <link rel="stylesheet" href="styles.css">                                
+    <title>LEA KIM - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .profile {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .content {
+            margin: 2em 0;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li {
+            background-color: #eee;
+            margin: 5px 0;
+            padding: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            margin: 2em 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #bbb;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Learn to Code 1</h1>
+        <h1>LEA KIM</h1>
     </header>
+    
+    <div class="container">
+        <div class="profile">
+            <img src="Quokka.jpeg" alt="Professional Picture">
+            <h2>VHHS Freshmen interested in animals</h2>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="learn-to-code-1.html">Learn to Code 1</a></li>
-            <li><a href="unit.html">Unit 1</a></li> <!-- New menu item -->
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <a href="learn-to-code.html">Learn to Code 1</a>
+        </nav>
 
-    <section id="learn-to-code">
-        <h2>What I Learned</h2>
-        <p>In this section, I learned about various fundamental programming concepts, including:</p>
-        <ul>
-            <li>Commands</li>
-            <li>For Loops</li>
-            <li>Conditionals</li>
-            <li>Logical Operators</li>
-            <li>Variables</li>
-            <li>Types</li>
-            <li>Initialization</li>
-            <li>Functions</li>
-            <li>Parameters</li>
-        </ul>
-        <p>Here are some resources and examples:</p>
+        <div class="content">
+            <h3>Hobbies and Interests</h3>
+            <ul>
+                <li>iPad drawing</li>
+                <li>Playing with my dog</li>
+            </ul>
+            <audio controls>
+                <source src="voice.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
 
-        <figure>
-            <img src="unit 1/picture1.png" alt="Picture 1" style="width:200px;height:400px;">
-            <figcaption>Explanation of Picture 1.</figcaption>
-        </figure>
-
-        <figure>
-            <img src="unit 1/picture2.png/picture2.png" alt="Picture 2" style="width:200px;height:400px;">
-            <figcaption>Explanation of Picture 2.</figcaption>
-        </figure>
-
-        <figure>
-            <video controls>
-                <source src="unit1/video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <figcaption>Video 1 showing examples of learned concepts.</figcaption>
-        </figure>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Lea Kim. All rights reserved.</p>
-    </footer>
+    <div class="footer">
+        <p>&copy; 2024 LEA KIM</p>
+    </div>
 </body>
 </html>
