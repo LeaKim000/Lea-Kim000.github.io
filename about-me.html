@@ -47,12 +47,23 @@
             margin: 5px 0;
             padding: 10px;
         }
+        .image-gallery, .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2em;
+        }
+        .image-gallery img, .video-gallery iframe {
+            margin: 10px;
+            width: 300px; /* Set width for images/videos */
+            height: auto; /* Maintain aspect ratio */
+        }
         .footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
@@ -75,13 +86,13 @@
 </head>
 <body>
     <header>
-        <h1>LEA KIM</h1>
+        <h1>LEA KIM - About Me</h1>
     </header>
     
     <div class="container">
         <div class="profile">
             <img src="Quokka.jpeg" alt="Professional Picture">
-            <h2>VHHS Freshman Interested in Animals</h2>
+            <h2>VHHS Freshmen interested in animals</h2>
         </div>
         
         <nav>
@@ -89,24 +100,36 @@
             <a href="learn-to-code.html">Learn to Code 1</a>
             <a href="web-development-basics.html">Web Development Basics</a>
             <a href="keep-going-with-apps.html">Keep Going with Apps</a>
-            <a href="about-me.html">About Me</a> <!-- New link added here --> 
         </nav>
         
         <div class="content">
             <h3>About Me</h3>
-            <p>Hello! I’m Lea, a freshman at VHHS with a passion for animals and technology. I enjoy exploring creative ways to express myself, whether through drawing or interacting with pets.</p>
-            
+            <p>Hi! I'm Lea Kim, a freshmen at VHHS with a passion for animals and technology. I love exploring new ways to express my creativity, whether it's through drawing or coding.</p>
             <h3>Hobbies and Interests</h3>
             <ul>
                 <li>iPad drawing</li>
                 <li>Playing with my dog</li>
-                <li>Learning about animal care and welfare</li>
-                <li>Exploring new apps and technology</li>
+                <li>Learning to code</li>
             </ul>
             <audio controls>
                 <source src="voice.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
+        </div>
+        
+        <div class="image-gallery">
+            <h3>Image Gallery</h3>
+            <img src="image1.jpg" alt="Description of image 1">
+            <img src="image2.jpg" alt="Description of image 2">
+            <img src="image3.jpg" alt="Description of image 3">
+            <!-- Add more images as needed -->
+        </div>
+        
+        <div class="video-gallery">
+            <h3>Video Gallery</h3>
+            <iframe src="https://www.youtube.com/embed/videoID1" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/videoID2" frameborder="0" allowfullscreen></iframe>
+            <!-- Add more videos as needed -->
         </div>
     </div>
 
