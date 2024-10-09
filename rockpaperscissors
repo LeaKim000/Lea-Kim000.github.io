@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .profile {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .content {
+            margin: 2em 0;
+        }
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content ul li {
+            background-color: #eee;
+            margin: 5px 0;
+            padding: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            margin: 2em 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
+    
+    <div class="container">
+        <div class="profile">
+            <img src="your-image-url-1.jpg" alt="Rock, Paper, Scissors">
+            <h2>A Classic Game of Strategy</h2>
+        </div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="how-to-play.html">How to Play</a>
+            <a href="strategy-tips.html">Strategy Tips</a>
+            <a href="variations.html">Game Variations</a>
+            <a href="about.html">About This Game</a>
+        </nav>
+        
+        <div class="content">
+            <h3>Game Overview</h3>
+            <ul>
+                <li>Easy to Learn</li>
+                <li>Fun for All Ages</li>
+                <li>Perfect for Quick Decisions</li>
+            </ul>
+            <h3>Images</h3>
+            <img src="your-image-url-2.jpg" alt="Rock" style="width: 200px; margin: 10px;">
+            <img src="your-image-url-3.jpg" alt="Paper" style="width: 200px; margin: 10px;">
+            <h3>Watch a Video</h3>
+            <video width="320" height="240" controls>
+                <source src="your-video-url.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Rock, Paper, Scissors Game</p>
+    </div>
+</body>
+</html>
