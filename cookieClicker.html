@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #7c4dff;
+            color: white;
+            padding: 1em 0;
+        }
+        .cookie {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .cookie:hover {
+            transform: scale(1.1);
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .upgrade {
+            background-color: red;
+            color: white;
+        }
+        .buy-grandma {
+            background-color: green;
+            color: white;
+        }
+        .disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cookie Clicker</h1>
+    </header>
+
+    <div class="container">
+        <h2>Click for Cookie!</h2>
+        <h3>Cookies Clicked: <span id="cookieCount">0</span></h3>
+        <h3>Grandmas: <span id="grandmaCount">0</span></h3>
+        
+        <img src="cookie.png" alt="Cookie" class="cookie" id="cookie" onclick="clickCookie()">
+        
+        <button class="button upgrade" onclick="upgrade()">Upgrade (Cost: 10 Cookies)</button>
+        <button class="button buy-grandma" id="buyGrandma" onclick="buyGrandma()">Buy Grandma (Cost: 500 Cookies)</button>
+        
+        <div id="goldenCookie" style="display:none;">
+            <img src="golden_cookie.png" alt="Golden Cookie" class="cookie" onclick="collectGoldenCookie()">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Cookie Clicker Game</p>
+    </div>
+
+    <script>
+        let cookieCount = 0;
+        let upgradeLevel = 1;
+        let grandmas = 0;
+
+        function clickCookie() {
+            cookieCount += upgradeLevel;
+            document.getElementById('cookieCount').innerText = cookieCount;
+            spawnGoldenCookie();
+        }
+
+        function upgrade() {
+            if (cookieCount >= 10) {
+                upgradeLevel++;
+                cookieCount -= 10;
+                document.getElementById('cookieCount').innerText = cookieCount;
+                alert("Upgrade successful! Current Upgrade Level: " + upgradeLevel);
+            } else {
+                alert("Not enough cookies!");
+            }
+        }
+
+        function buyGrandma() {
+            if (cookieCount >= 500) {
+                cookieCount -= 500;
+                grandmas++;
+                document.getElementById('cookieCount').innerText = cookieCount;
+                document.getElementById('grandmaCount').innerText = grandmas;
+                startGeneratingCookies();
+            }
+        }
+
+        function startGeneratingCookies() {
+            setInterval(() => {
+                cookieCount += grandmas;
+                document.getElementById('cookieCount').innerText = cookieCount;
+            }, 1000);
+        }
+
+        function spawnGoldenCookie() {
+            if (Math.random() < 0.1) { // 10% chance to spawn
+                document.getElementById('goldenCookie').style.display = 'block';
+                setTimeout(hideGoldenCookie, 3000); // Hide after 3 seconds
+            }
+        }
+
+        function hideGoldenCookie() {
+            document.getElementById('goldenCookie').style.display = 'none';
+        }
+
+        function collectGoldenCookie() {
+            cookieCount += 50; // Collect 50 cookies
+            document.getElementById('cookieCount').innerText = cookieCount;
+            hideGoldenCookie();
+        }
+    </script>
+</body>
+</html>
