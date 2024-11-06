@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LEA KIM Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 5% auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form {
+            margin: 20px 0;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #555;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .media-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .media-container img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .media-container video {
+            width: 80%;
+            max-width: 500px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login - LEA KIM Portfolio</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Login to your account</h2>
+        
+        <div class="login-form">
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        
+        <!-- Display images and video here -->
+        <div class="media-container">
+            <img src="picture-4.img" alt="Picture 4">
+            <img src="picture-5.img" alt="Picture 5">
+            <video controls>
+                <source src="video-2.mov" type="video/mov">
+                Your browser does not support the video element.
+            </video>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 LEA KIM</p>
+    </div>
+</body>
+</html>
