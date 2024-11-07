@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selling-App - LEA KIM Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .content {
+            margin: 2em 0;
+        }
+        .content h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+        .content p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .content code {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 0.5em;
+            font-family: monospace;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            margin: 2em 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LEA KIM</h1>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <h2>About the Selling-App</h2>
+            <p>The <strong>Selling-App</strong> is a simple iOS application designed to manage item quantities and calculate costs dynamically. Built with UIKit and Swift, it allows users to add and subtract items from their shopping cart while updating the cost in real-time.</p>
+
+            <h3>Key Features:</h3>
+            <ul>
+                <li>User can adjust the quantity of an item using a stepper.</li>
+                <li>The total cost of the items is calculated automatically (5000 per item).</li>
+                <li>The total cost is passed to a second view page when the user navigates away.</li>
+            </ul>
+
+            <h3>Technology Stack:</h3>
+            <ul>
+                <li>Swift Programming Language</li>
+                <li>UIKit Framework for UI Design</li>
+                <li>Storyboard for creating the user interface</li>
+                <li>Basic logic for calculating costs based on item quantity</li>
+            </ul>
+
+            <h3>App Overview</h3>
+            <p>The app has two main pages:</p>
+            <ul>
+                <li><strong>Page 1</strong>: Users adjust the quantity of an item. The total cost is updated accordingly and displayed on the same page.</li>
+                <li><strong>Page 2</strong>: The user can view the final cost, which was passed from Page 1 after navigation.</li>
+            </ul>
+
+            <h3>Code Example</h3>
+            <p>Here's a simplified code snippet of the app:</p>
+            <pre><code>// ViewController.swift
+@IBOutlet weak var value: UILabel!
+@IBOutlet weak var qty: UILabel!
+@IBOutlet weak var cost: UILabel!
+
+@IBAction func add(_ sender: UIStepper) {
+    value.text = sender.value.description
+    qty.text = sender.value.description
+    let qtyInt = Int(sender.value)
+    var output = String(qtyInt * 5000)
+    cost.text = output
+}</code></pre>
+
+            <p>The above code allows the user to adjust the quantity using the stepper and updates the cost in real-time.</p>
+
+            <p>When the user clicks a button to navigate to Page 2, the cost value is passed using a segue:</p>
+            <pre><code>// ViewController.swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let sendCost = segue.destination as? page2ViewController
+    sendCost?.page1Cost = cost.text
+}</code></pre>
+
+            <p>This functionality is key to keeping the app simple and easy to use. By passing the total cost to the next page, users can see their final price at any time.</p>
+
+            <h3>Screenshot of the Selling-App</h3>
+            <p>Here is a screenshot of how the app looks when the user interacts with the stepper to adjust the quantity and see the real-time total cost.</p>
+            <img src="picture-1.png".jpg" alt="Screenshot 1">
+            <img src="picture-2.png".jpg" alt="Screenshot 2">
+            <img src="picture-3.png".jpg" alt="Screenshot 3">
+
+        </div>
+        
+        <div class="video-gallery">
+            <h3>Video Gallery</h3>
+            <iframe src="video-1.mov" frameborder="0" allowfullscreen></iframe>
+            <!-- Add more videos as needed -->
+        </div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="learn-to-code.html">Learn to Code 1</a>
+            <a href="web-development-basics.html">Web Development Basics</a>
+            <a href="selling-app.html">Selling-App</a> <!-- Link to this page -->
+            <a href="about-me.html">About Me</a>
+        </nav>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 LEA KIM</p>
+    </div>
+</body>
+</html>
