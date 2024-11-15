@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2em 0;
+        }
+        .search-box {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .search-box input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        .search-box button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .weather-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .weather-info img {
+            max-width: 200px;
+        }
+        .weather-info h2 {
+            margin: 0;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+
+        <div id="weather-info" class="weather-info">
+            <!-- Weather information will be displayed here -->
+        </div>
+
+        <div class="video-container">
+            <h2>Weather App Video</h2>
+            <video controls>
+                <source src="WeatherApp-video.mov" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+
+        <div class="image-container">
+            <h2>Weather Image</h2>
+            <img src="WeatherApp-picture.png" alt="Weather Picture">
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Weather App</p>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const city = document.getElementById('city-input').value;
+            const apiKey = 'your-api-key-here'; // You need to replace this with your actual API key
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.cod === 200) {
+                    const weather = data.weather[0].description;
+                    const temperature = data.main.temp;
+                    const cityName = data.name;
+                    const weatherIcon = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+                    document.getElementById('weather-info').innerHTML = `
+                        <h2>Weather in ${cityName}</h2>
+                        <img src="${weatherIcon}" alt="Weather icon">
+                        <p>${weather}</p>
+                        <p>Temperature: ${temperature}°C</p>
+                    `;
+                } else {
+                    document.getElementById('weather-info').innerHTML = `
+                        <p>City not found. Please try again.</p>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('weather-info').innerHTML = `
+                    <p>Error fetching weather data. Please try again later.</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="learn-to-code.html">Learn to Code 1</a>
+    <a href="web-development-basics.html">Web Dev</a> <!-- New link added here -->
+    <a href="keep-going-with-apps.html">First Apps</a> <!-- New link added here -->
+    <a href="about-me.html">About Me</a> <!-- New link added here -->
+    <a href="rock-paper-scissors.html">Rock, Paper, Scissors</a> <!-- New link added here -->
+    <a href="cookieClicker.html">cookie Clicker</a> <!-- New link added here -->
+    <a href="Login.html">Login</a> <!-- New link added here -->
+    <a href="Selling-App.html">Selling-App</a> <!-- New link added here -->
+    <a href="Weather-App.html">Weather-App</a> <!-- New link added here -->
+
+
+
+
+
+</nav>
