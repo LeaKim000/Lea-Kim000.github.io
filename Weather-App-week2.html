@@ -1,43 +1,112 @@
-<section class="week">
-    <h2>Week 2 - Core Features Implementation</h2>
-    <p>This week I focused on implementing the core functionality of the project, including setting up user authentication and adding key UI components. I also made significant progress on the frontend design.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Week 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    <!-- New Section: Project Goal Description -->
-    <section class="project-goal">
-        <h3>The Goal of My Final Project</h3>
-        <p>The goal of my final project is to make my own weather app with different weather conditions, temperatures, and icons (images) for each, and be able to make people laugh using memes of cute and funny animals.</p>
-        <p>I add cute and funny animal memes to make my own individualistic weather app.</p>
-    </section>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
 
-    <!-- Image: Weather App Picture 2 -->
-    <figure>
-        <img src="Weather-App-picture2.png" alt="UI Components for Weather App" width="600">
-        <figcaption>Weather App UI Components</figcaption>
-    </figure>
+        header h1 {
+            margin: 0;
+        }
 
-    <!-- Video: Weather App Demo 2 -->
-    <figure>
-        <video width="600" controls>
-            <source src="Weather-App-video2.mov" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <figcaption>Weather App Demo: Core Features</figcaption>
-    </figure>
+        /* Main container to centralize content */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2em 0;
+        }
 
-    <!-- Call-to-action or teaser -->
-    <p>Next week, I'll refine the UI and begin working on backend integration. Stay tuned for more updates!</p>
-</section> <!-- Ensure this tag is closed properly -->
+        /* Section styling */
+        .week, .project-goal, .video-container, .image-container {
+            margin-bottom: 2em;
+        }
 
-<!-- Navigation section -->
-<nav>
-    <a href="index.html">Home</a>
-    <a href="learn-to-code.html">Learn to Code 1</a>
-    <a href="web-development-basics.html">Web Dev</a> <!-- New link added here -->
-    <a href="keep-going-with-apps.html">First Apps</a> <!-- New link added here -->
-    <a href="about-me.html">About Me</a> <!-- New link added here -->
-    <a href="rock-paper-scissors.html">Rock, Paper, Scissors</a> <!-- New link added here -->
-    <a href="cookieClicker.html">Cookie Clicker</a> <!-- New link added here -->
-    <a href="Login.html">Login</a> <!-- New link added here -->
-    <a href="Selling-App.html">Selling App</a> <!-- New link added here -->
-    <a href="Weather-App.html">Weather App</a> <!-- New link added here -->
-</nav>
+        .week h2, .project-goal h3 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 1em;
+        }
+
+        .project-goal p {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Styling for images and videos */
+        figure {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        img {
+            max-width: 100%; /* Adjust size of image */
+            height: auto;
+        }
+
+        .video-container video {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #f4f4f4;
+            text-decoration: underline;
+        }
+
+        /* Footer for fixed position */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Weather App - Week 2</h1>
+    </header>
+
+    <div class="container">
+        <section class="week">
+            <h2>Week 2 - Core Features Implementation</h2>
+            <p>This week I focused on implementing the core functionality of the project, including setting up user authentication and adding key UI components. I also made significant progress on the frontend design.</p>
+
+            <section class="project-goal">
+                <h3>The Goal of My Final Project</h3>
+                <p>The goal of my final project is to make my own weather app with different weather conditions, temperatures, and icons (images) for each, and be able to make people laugh using memes of cute a
