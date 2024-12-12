@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2em 0;
+        }
+        .search-box {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .search-box input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        .search-box button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .weather-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 2em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .weather-info img {
+            max-width: 80px; /* Smaller size for weather icon */
+            height: auto;
+        }
+        .weather-info h2 {
+            margin: 0;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .video-container video {
+            max-width: 60%; /* Reduced size */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Image Container */
+        .image-container img {
+            max-width: 200px; /* Adjust size based on your need */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Styling for Description Section */
+        .project-description {
+            margin-top: 3em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <div class="container">
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+
+        <!-- Weather Information -->
+        <div id="weather-info" class="weather-info">
+            <!-- Weather information will be dynamically displayed here -->
+        </div>
+
+        <!-- Weather Image Section -->
+        <div class="image-container">
+            <h2>Weather Image</h2>
+            <img id="weather-image" src="Weather-App picture3.png" alt="Weather Picture" />
+        </div>
+
+        <!-- Weather Video Section -->
+        <div class="video-container">
+            <h2>Weather Video</h2>
+            <video controls>
+                <source src="Weather-App-video3.mov" type="video/mp4">
+                <source src="Weather-App-video4.mov" type="video/mp4">
+
+                Your browser does not support the video element.
+            </video>
+        </div>
+
+        <!-- Project Description -->
+        <div class="project-description">
+            <h2>The Goal of My Project</h2>
+            <p>The goal of my final project is to create a weather app that provides various weather conditions, temperatures, and other details. It will include images and videos based on the weather for a more interactive experience.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weather App</p>
+    </footer>
+
+    <script>
+        // JavaScript function to fetch weather data (using OpenWeather API or similar)
+
+        function getWeather() {
+            var city = document.getElementById("city-input").value;
+            if (city === "") {
+                alert("Please enter a city name");
+                return;
+            }
+
+            // Fetch weather data from OpenWeather API (example)
+            var apiKey = "YOUR_API_KEY";  // Replace with your actual API key
+            var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === 200) {
+                        var weather = data.weather[0];
+                        var main = data.main;
+                        
+                        // Display weather data in the UI
+                        document.getElementById("weather-info").innerHTML = `
+                            <h2>${weather.main}</h2>
+                            <p>${weather.description}</p>
+                            <p>Temperature: ${main.temp}°C</p>
+                            <p>Humidity: ${main.humidity}%</p>
+                        `;
+                        
+                        // Change weather image based on condition
+                        var weatherIcon = weather.main.toLowerCase().replace(" ", "-");
+                        document.getElementById("weather-image").src = `Weather-App-${weatherIcon}.jpg`;
+                    } else {
+                        alert("City not found!");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching weather data: ", error);
+                    alert("Something went wrong. Please try again.");
+                });
+        }
+    </script>
+
+</body>
+</html>
