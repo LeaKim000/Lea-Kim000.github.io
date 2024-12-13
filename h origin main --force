@@ -1,0 +1,209 @@
+[1mdiff --git a/Weather App-picture3.png b/Weather App-picture3.png[m
+[1mdeleted file mode 100644[m
+[1mindex 02e1f58..0000000[m
+Binary files a/Weather App-picture3.png and /dev/null differ
+[1mdiff --git a/Weather-App-video3.mov b/Weather-App-video3.mov[m
+[1mdeleted file mode 100644[m
+[1mindex ef84244..0000000[m
+Binary files a/Weather-App-video3.mov and /dev/null differ
+[1mdiff --git a/Weather-App-video4.mov b/Weather-App-video4.mov[m
+[1mdeleted file mode 100644[m
+[1mindex 88309ce..0000000[m
+Binary files a/Weather-App-video4.mov and /dev/null differ
+[1mdiff --git a/Weather-App-week3.html b/Weather-App-week3.html[m
+[1mdeleted file mode 100644[m
+[1mindex 84c7922..0000000[m
+[1m--- a/Weather-App-week3.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,179 +0,0 @@[m
+[31m-<!DOCTYPE html>[m
+[31m-<html lang="en">[m
+[31m-<head>[m
+[31m-    <meta charset="UTF-8">[m
+[31m-    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[31m-    <title>Weather App</title>[m
+[31m-    <style>[m
+[31m-        body {[m
+[31m-            font-family: Arial, sans-serif;[m
+[31m-            margin: 0;[m
+[31m-            padding: 0;[m
+[31m-            background-color: #f4f4f4;[m
+[31m-            color: #333;[m
+[31m-        }[m
+[31m-        header {[m
+[31m-            background-color: #333;[m
+[31m-            color: #fff;[m
+[31m-            padding: 1em 0;[m
+[31m-            text-align: center;[m
+[31m-        }[m
+[31m-        header h1 {[m
+[31m-            margin: 0;[m
+[31m-        }[m
+[31m-        .container {[m
+[31m-            width: 80%;[m
+[31m-            margin: auto;[m
+[31m-            padding: 2em 0;[m
+[31m-        }[m
+[31m-        .search-box {[m
+[31m-            text-align: center;[m
+[31m-            margin-bottom: 2em;[m
+[31m-        }[m
+[31m-        .search-box input {[m
+[31m-            padding: 10px;[m
+[31m-            width: 200px;[m
+[31m-            margin-right: 10px;[m
+[31m-        }[m
+[31m-        .search-box button {[m
+[31m-            padding: 10px 20px;[m
+[31m-            cursor: pointer;[m
+[31m-            background-color: #333;[m
+[31m-            color: #fff;[m
+[31m-            border: none;[m
+[31m-            border-radius: 5px;[m
+[31m-        }[m
+[31m-        .weather-info {[m
+[31m-            text-align: center;[m
+[31m-            background-color: #fff;[m
+[31m-            padding: 2em;[m
+[31m-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);[m
+[31m-            border-radius: 10px;[m
+[31m-        }[m
+[31m-        .weather-info img {[m
+[31m-            max-width: 80px; /* Smaller size for weather icon */[m
+[31m-            height: auto;[m
+[31m-        }[m
+[31m-        .weather-info h2 {[m
+[31m-            margin: 0;[m
+[31m-        }[m
+[31m-        .footer {[m
+[31m-            background-color: #333;[m
+[31m-            color: #fff;[m
+[31m-            text-align: center;[m
+[31m-            padding: 1em 0;[m
+[31m-            position: fixed;[m
+[31m-            bottom: 0;[m
+[31m-            width: 100%;[m
+[31m-        }[m
+[31m-        .video-container {[m
+[31m-            text-align: center;[m
+[31m-            margin-top: 2em;[m
+[31m-        }[m
+[31m-        .video-container video {[m
+[31m-            max-width: 60%; /* Reduced size */[m
+[31m-            height: auto;[m
+[31m-            border-radius: 10px;[m
+[31m-        }[m
+[31m-        .image-container img {[m
+[31m-            max-width: 200px;[m
+[31m-            height: auto;[m
+[31m-            border-radius: 10px;[m
+[31m-        }[m
+[31m-        .project-description {[m
+[31m-            margin-top: 3em;[m
+[31m-            text-align: center;[m
+[31m-        }[m
+[31m-    </style>[m
+[31m-</head>[m
+[31m-<body>[m
+[31m-[m
+[31m-    <header>[m
+[31m-        <h1>Weather App</h1>[m
+[31m-    </header>[m
+[31m-[m
+[31m-    <div class="container">[m
+[31m-        <!-- Search Box -->[m
+[31m-        <div class="search-box">[m
+[31m-            <input type="text" id="city-input" placeholder="Enter city name...">[m
+[31m-            <button onclick="getWeather()">Get Weather</button>[m
+[31m-        </div>[m
+[31m-[m
+[31m-        <!-- Weather Information -->[m
+[31m-        <div id="weather-info" class="weather-info">[m
+[31m-            <!-- Weather information will be dynamically displayed here -->[m
+[31m-        </div>[m
+[31m-[m
+[31m-        <!-- Weather Image Section -->[m
+[31m-        <div class="image-container">[m
+[31m-            <h2>Weather Image</h2>[m
+[31m-            <img id="weather-image" src="Weather-App-picture3.png" alt="Weather Picture" />[m
+[31m-        </div>[m
+[31m-[m
+[31m-        <!-- Weather Video Section -->[m
+[31m-        <div class="video-container">[m
+[31m-            <h2>Weather Video</h2>[m
+[31m-            <video controls>[m
+[31m-                <source src="Weather-App-video3.mp4" type="video/mp4">[m
+[31m-                <source src="Weather-App-video4.mp4" type="video/mp4">[m
+[31m-                Your browser does not support the video element.[m
+[31m-            </video>[m
+[31m-        </div>[m
+[31m-[m
+[31m-        <!-- Project Description -->[m
+[31m-        <div class="project-description">[m
+[31m-            <h2>The Goal of My Project</h2>[m
+[31m-            <p>The goal of my final project is to create a weather app that provides various weather conditions, temperatures, and other details. It will include images and videos based on the weather for a more interactive experience.</p>[m
+[31m-            <p><strong>Note:</strong> I made the Weather App using funny and cute cat memes on each page. Because of that, you can bring a fresh and humorous touch to the weather with cute and funny cat memes.</p>[m
+[31m-        </div>[m
+[31m-    </div>[m
+[31m-[m
+[31m-    <footer class="footer">[m
+[31m-        <p>&copy; 2024 Weather App</p>[m
+[31m-    </footer>[m
+[31m-[m
+[31m-    <script>[m
+[31m-        // JavaScript function to fetch weather data (using OpenWeather API or similar)[m
+[31m-[m
+[31m-        function getWeather() {[m
+[31m-            var city = document.getElementById("city-input").value;[m
+[31m-            if (city === "") {[m
+[31m-                alert("Please enter a city name");[m
+[31m-                return;[m
+[31m-            }[m
+[31m-[m
+[31m-            // Corrected API URL with backticks and proper interpolation[m
+[31m-            var apiKey = "YOUR_API_KEY";  // Replace with your actual API key[m
+[31m-            var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;[m
+[31m-[m
+[31m-            fetch(apiUrl)[m
+[31m-                .then(response => response.json())[m
+[31m-                .then(data => {[m
+[31m-                    if (data.cod === 200) {[m
+[31m-                        var weather = data.weather[0];[m
+[31m-                        var main = data.main;[m
+[31m-                        [m
+[31m-                        // Display weather data in the UI[m
+[31m-                        document.getElementById("weather-info").innerHTML = `[m
+[31m-                            <h2>${weather.main}</h2>[m
+[31m-                            <p>${weather.description}</p>[m
+[31m-                            <p>Temperature: ${main.temp}°C</p>[m
+[31m-                            <p>Humidity: ${main.humidity}%</p>[m
+[31m-                        `;[m
+[31m-                        [m
+[31m-                        // Change weather image based on condition[m
+[31m-                        var weatherIcon = weather.main.toLowerCase().replace(" ", "-");[m
+[31m-                        document.getElementById("weather-image").src = `Weather-App-${weatherIcon}.jpg`;[m
+[31m-                    } else {[m
+[31m-                        alert("City not found!");[m
+[31m-                    }[m
+[31m-                })[m
+[31m-                .catch(error => {[m
+[31m-                    console.error("Error fetching weather data: ", error);[m
+[31m-                    alert("Something went wrong. Please try again.");[m
+[31m-                });[m
+[31m-        }[m
+[31m-    </script>[m
+[31m-[m
+[31m-</body>[m
+[31m-</html>[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 9641362..1f5a070 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -96,7 +96,6 @@[m
+             <a href="Selling-App.html">Selling-App</a> <!-- New link added here -->[m
+             <a href="Weather-App.html">Weather-App</a> <!-- New link added here -->[m
+             <a href="Weather-App-week2.html">Weather-App-week2.html</a> <!-- New link added here -->[m
+[31m-            <a href="Weather-App-week3.html">Weather-App-week3.html</a> <!-- New link added here -->[m
+ [m
+ [m
+ [m
