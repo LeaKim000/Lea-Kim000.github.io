@@ -11,6 +11,9 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background-color: #333;
@@ -22,6 +25,7 @@
             margin: 0;
         }
         .container {
+            flex: 1;
             width: 80%;
             margin: auto;
             padding: 2em 0;
@@ -62,8 +66,6 @@
             color: #fff;
             text-align: center;
             padding: 1em 0;
-            position: fixed;
-            bottom: 0;
             width: 100%;
         }
         .video-container {
@@ -107,16 +109,15 @@
         <!-- Weather Image Section -->
         <div class="image-container">
             <h2>Weather Image</h2>
-            <img id="weather-image" src="Weather-App-picture3.png" src="Weather-App-picture4.png"
-            src="Weather-App-picture5.png" alt="Weather Picture" />
+            <img id="weather-image" src="" alt="Weather Picture" />
         </div>
 
         <!-- Weather Video Section -->
         <div class="video-container">
             <h2>Weather Video</h2>
             <video controls>
-                <source src="Weather-App-video3.mov" type="video/mp4">
-                <source src="Weather-App-video4.mov" type="video/mp4">
+                <source src="Weather-App-video3.mp4" type="video/mp4">
+                <source src="Weather-App-video4.mp4" type="video/mp4">
                 Your browser does not support the video element.
             </video>
         </div>
